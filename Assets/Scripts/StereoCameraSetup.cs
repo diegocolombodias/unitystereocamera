@@ -8,13 +8,29 @@ public class StereoCameraSetup : MonoBehaviour
 
     void Start()
     {
-        // Definir as posições das câmeras
+        // Sincroniza os parâmetros da câmera direita a partir da câmera esquerda
+        rightCamera.CopyFrom(leftCamera);
+
+        // Define a posição das câmeras com base na IPD
+        UpdateCameraPositions();
+
+        // Usa o sistema de projeção estéreo nativo do Unity
+        leftCamera.stereoTargetEye = StereoTargetEyeMask.Left;
+        rightCamera.stereoTargetEye = StereoTargetEyeMask.Right;
+
+        // Caso não esteja usando VR, ajusta a matriz de projeção manualmente
+        if (!XR.XRSettings.enabled)
+        {
+            SetStereoProjection(leftCamera, -ipd / 2);
+            SetStereoProjection(rightCamera, ipd / 2);
+        }
+    }
+
+    void UpdateCameraPositions()
+    {
+        // Atualiza as posições das câmeras para refletir a IPD
         leftCamera.transform.localPosition = new Vector3(-ipd / 2, 0, 0);
         rightCamera.transform.localPosition = new Vector3(ipd / 2, 0, 0);
-
-        // Definir as matrizes de projeção
-        SetStereoProjection(leftCamera, -ipd / 2);
-        SetStereoProjection(rightCamera, ipd / 2);
     }
 
     void SetStereoProjection(Camera cam, float shift)
@@ -31,5 +47,20 @@ public class StereoCameraSetup : MonoBehaviour
         proj[1, 2] = (top + bottom) / (top - bottom);
 
         cam.projectionMatrix = proj;
+    }
+
+    void Update()
+    {
+        // Permite que o usuário ajuste a IPD durante o runtime, se necessário
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            ipd += 0.001f;
+            UpdateCameraPositions();
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            ipd -= 0.001f;
+            UpdateCameraPositions();
+        }
     }
 }
