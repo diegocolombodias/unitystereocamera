@@ -4,90 +4,94 @@ public class StereoCameraSetup : MonoBehaviour
 {
     public Camera leftCamera;
     public Camera rightCamera;
-    public float ipd = 0.065f; // Distância interpupilar padrão
-
-    [Tooltip("Ative para forçar a renderização simultânea e evitar flicks.")]
-    public bool forceManualRender = true;
+    
+    [Header("Configurações Estéreo")]
+    public float ipd = 0.065f; // Distância interpupilar
+    public float sensitivity = 0.001f;
 
     void Start()
     {
-        // Sincroniza os parâmetros da câmera direita a partir da câmera esquerda
+        if (leftCamera == null || rightCamera == null)
+        {
+            Debug.LogError("Atribua as câmeras no Inspetor!");
+            return;
+        }
+
+        ConfigureCameras();
+        UpdateStereoSetup();
+    }
+
+    void ConfigureCameras()
+    {
+        // Copia configurações base
         rightCamera.CopyFrom(leftCamera);
 
-        // Define a posição inicial e a projeção
-        UpdateStereoSetup();
+        // A MÁGICA CONTRA O FLICK: Viewport Rects
+        // Divide a tela exatamente ao meio para renderização síncrona
+        leftCamera.rect = new Rect(0f, 0f, 0.5f, 1f);
+        rightCamera.rect = new Rect(0.5f, 0f, 0.5f, 1f);
 
-        // Usa o sistema de projeção estéreo nativo do Unity (para VR nativo)
-        leftCamera.stereoTargetEye = StereoTargetEyeMask.Left;
-        rightCamera.stereoTargetEye = StereoTargetEyeMask.Right;
+        // Garante que o Unity gerencie o loop de renderização (evita dessincronia de CPU/GPU)
+        leftCamera.enabled = true;
+        rightCamera.enabled = true;
 
-        // Caso não esteja usando VR nativo, preparamos a renderização manual
-        if (!UnityEngine.XR.XRSettings.enabled && forceManualRender)
+        // Desativa VR nativo se estiver tentando fazer manual
+        leftCamera.stereoTargetEye = StereoTargetEyeMask.None;
+        rightCamera.stereoTargetEye = StereoTargetEyeMask.None;
+    }
+
+    void LateUpdate()
+    {
+        bool changed = false;
+
+        // Uso das teclas + e - para ajuste (Conforme conversamos antes)
+        if (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.KeypadPlus) || Input.GetKey(KeyCode.Equals))
         {
-            // Desativa a renderização automática no loop padrão da Unity
-            leftCamera.enabled = false;
-            rightCamera.enabled = false;
+            ipd += sensitivity;
+            changed = true;
+        }
+        if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
+        {
+            ipd -= sensitivity;
+            changed = true;
+        }
+
+        if (changed)
+        {
+            UpdateStereoSetup();
         }
     }
 
     void UpdateStereoSetup()
     {
-        // Atualiza as posições
+        // 1. Posicionamento físico das câmeras
         leftCamera.transform.localPosition = new Vector3(-ipd / 2, 0, 0);
         rightCamera.transform.localPosition = new Vector3(ipd / 2, 0, 0);
 
-        // Atualiza as matrizes de projeção (necessário sempre que a IPD mudar)
-        if (!UnityEngine.XR.XRSettings.enabled)
-        {
-            SetStereoProjection(leftCamera, -ipd / 2);
-            SetStereoProjection(rightCamera, ipd / 2);
-        }
+        // 2. Ajuste das Matrizes de Projeção para Projeção Assimétrica (Off-axis)
+        // Isso evita a convergência ocular forçada e o cansaço visual
+        SetStereoProjection(leftCamera, -ipd / 2);
+        SetStereoProjection(rightCamera, ipd / 2);
     }
 
     void SetStereoProjection(Camera cam, float shift)
     {
         Matrix4x4 proj = cam.projectionMatrix;
+        
+        // Cálculo da frustum baseado no Near Clip Plane
+        // Usando LaTeX para referência: $$ w = \frac{2 \cdot near}{m00} $$
         float w = 2 * cam.nearClipPlane / proj.m00;
         float h = 2 * cam.nearClipPlane / proj.m11;
-        float left = -w / 2 + shift;
-        float right = left + w;
+        
+        float left = -w / 2 - shift;
+        float right = w / 2 - shift;
         float top = h / 2;
-        float bottom = -top;
+        float bottom = -h / 2;
 
+        // Ajuste dos coeficientes da matriz para o deslocamento lateral
         proj[0, 2] = (right + left) / (right - left);
         proj[1, 2] = (top + bottom) / (top - bottom);
 
         cam.projectionMatrix = proj;
-    }
-
-    // Mudado para LateUpdate para garantir que a cena inteira já se moveu neste frame
-    void LateUpdate()
-    {
-        bool ipdChanged = false;
-
-        // Permite que o usuário ajuste a IPD durante o runtime
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ipd += 0.001f;
-            ipdChanged = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            ipd -= 0.001f;
-            ipdChanged = true;
-        }
-
-        // Se a IPD mudou, atualiza posição e projeção imediatamente
-        if (ipdChanged)
-        {
-            UpdateStereoSetup();
-        }
-
-        // A BARREIRA: Força a renderização sequencial estrita no exato mesmo momento do frame
-        if (!UnityEngine.XR.XRSettings.enabled && forceManualRender)
-        {
-            leftCamera.Render();
-            rightCamera.Render();
-        }
     }
 }
