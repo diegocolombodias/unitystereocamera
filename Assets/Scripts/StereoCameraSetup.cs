@@ -1,75 +1,74 @@
 using UnityEngine;
 
-public class StereoCameraSetup : MonoBehaviour
+public class StereoMultiDisplaySetup : MonoBehaviour
 {
     public Camera leftCamera;
     public Camera rightCamera;
-    
-    [Header("Configurações Estéreo")]
-    public float ipd = 0.065f; // Distância interpupilar
-    public float sensitivity = 0.001f;
+
+    [Header("Configurações de Hardware")]
+    public float ipd = 0.065f;
+    public int refreshRate = 60; // Ajuste para a frequência do seu monitor (Ex: 60, 120, 144)
+
+    void Awake()
+    {
+        // 1. ATIVAÇÃO DOS MONITORES
+        // No Unity, Display[0] é o monitor principal. Display[1] é o secundário.
+        if (Display.displays.Length > 1)
+        {
+            Display.displays[1].Activate();
+            // Opcional: Forçar resolução nativa do monitor secundário
+            // Display.displays[1].SetRenderingResolution(1920, 1080);
+        }
+        else
+        {
+            Debug.LogWarning("Segundo monitor não detectado!");
+        }
+
+        // 2. CONFIGURAÇÃO DE TARGET DISPLAY
+        leftCamera.targetDisplay = 0;  // Monitor 1
+        rightCamera.targetDisplay = 1; // Monitor 2
+        
+        // Garante que não há interferência de VR nativo
+        leftCamera.stereoTargetEye = StereoTargetEyeMask.None;
+        rightCamera.stereoTargetEye = StereoTargetEyeMask.None;
+
+        // 3. SINCRONIZAÇÃO DE FRAME RATE
+        // Essencial para evitar que uma janela "corra" mais que a outra
+        Application.targetFrameRate = refreshRate;
+        QualitySettings.vSyncCount = 1; // Força V-Sync em todos os buffers de saída
+    }
 
     void Start()
     {
-        if (leftCamera == null || rightCamera == null)
-        {
-            Debug.LogError("Atribua as câmeras no Inspetor!");
-            return;
-        }
-
-        ConfigureCameras();
         UpdateStereoSetup();
-    }
-
-    void ConfigureCameras()
-    {
-        // Copia configurações base
-        rightCamera.CopyFrom(leftCamera);
-
-        // A MÁGICA CONTRA O FLICK: Viewport Rects
-        // Divide a tela exatamente ao meio para renderização síncrona
-        leftCamera.rect = new Rect(0f, 0f, 0.5f, 1f);
-        rightCamera.rect = new Rect(0.5f, 0f, 0.5f, 1f);
-
-        // Garante que o Unity gerencie o loop de renderização (evita dessincronia de CPU/GPU)
-        leftCamera.enabled = true;
-        rightCamera.enabled = true;
-
-        // Desativa VR nativo se estiver tentando fazer manual
-        leftCamera.stereoTargetEye = StereoTargetEyeMask.None;
-        rightCamera.stereoTargetEye = StereoTargetEyeMask.None;
     }
 
     void LateUpdate()
     {
         bool changed = false;
 
-        // Uso das teclas + e - para ajuste (Conforme conversamos antes)
+        // Teclas + e - (considerando layout ABNT e Teclado Numérico)
         if (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.KeypadPlus) || Input.GetKey(KeyCode.Equals))
         {
-            ipd += sensitivity;
+            ipd += 0.0005f;
             changed = true;
         }
         if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
         {
-            ipd -= sensitivity;
+            ipd -= 0.0005f;
             changed = true;
         }
 
-        if (changed)
-        {
-            UpdateStereoSetup();
-        }
+        if (changed) UpdateStereoSetup();
     }
 
     void UpdateStereoSetup()
     {
-        // 1. Posicionamento físico das câmeras
+        // Posicionamento
         leftCamera.transform.localPosition = new Vector3(-ipd / 2, 0, 0);
         rightCamera.transform.localPosition = new Vector3(ipd / 2, 0, 0);
 
-        // 2. Ajuste das Matrizes de Projeção para Projeção Assimétrica (Off-axis)
-        // Isso evita a convergência ocular forçada e o cansaço visual
+        // Matrizes de Projeção Assimétrica
         SetStereoProjection(leftCamera, -ipd / 2);
         SetStereoProjection(rightCamera, ipd / 2);
     }
@@ -77,18 +76,14 @@ public class StereoCameraSetup : MonoBehaviour
     void SetStereoProjection(Camera cam, float shift)
     {
         Matrix4x4 proj = cam.projectionMatrix;
-        
-        // Cálculo da frustum baseado no Near Clip Plane
-        // Usando LaTeX para referência: $$ w = \frac{2 \cdot near}{m00} $$
         float w = 2 * cam.nearClipPlane / proj.m00;
         float h = 2 * cam.nearClipPlane / proj.m11;
-        
+
         float left = -w / 2 - shift;
         float right = w / 2 - shift;
         float top = h / 2;
         float bottom = -h / 2;
 
-        // Ajuste dos coeficientes da matriz para o deslocamento lateral
         proj[0, 2] = (right + left) / (right - left);
         proj[1, 2] = (top + bottom) / (top - bottom);
 
