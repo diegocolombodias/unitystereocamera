@@ -26,7 +26,7 @@ Siga estes passos para configurar a câmera estéreo na sua cena:
 3. Adicione o script `StereoCameraSetup.cs` ao objeto pai ou a um controlador de cena.
 
 ### 2. Configuração do Script Stereo
-No Inspector do script `StereoCameraSetup`:
+No Inspector do script `StereoCameraSetup`: Este deve estar no mesmo obejto do DisplayManager
 * Arraste o objeto `CameraPivot` para o campo **Pivot**.
 * O script aplicará a função `ApplyStereoProjection` para ajustar as matrizes de projeção de ambas as câmeras com base no deslocamento lateral (IPD).
 
