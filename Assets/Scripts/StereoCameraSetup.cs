@@ -6,8 +6,6 @@ public class StereoCameraSetup : MonoBehaviour
 {
     public Transform pivot; // Arraste o CameraPivot aqui
 
-    public float ipd = 0.065f;
-
     void ApplyStereoProjection(Camera cam, float offset)
     {
         Matrix4x4 m = cam.projectionMatrix;

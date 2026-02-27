@@ -24,10 +24,10 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json",
       "DisplayName": "BuildPlayerDataGenerator TypeDb-All",
-      "Action": "\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/netcorerun/netcorerun\" \"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Managed/UnityEngine\" -s=\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/NetStandard/ref/2.1.0\" -s=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/ScriptAssemblies\" -s=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator\" -s=\"/home/diego/Documentos/Projetos/unity/dualcam/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/netcorerun/netcorerun\" \"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Assembly-CSharp.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Unity.Timeline.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies/UnityEngine.UI.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator/ReportGeneratorMerged.dll\" -a=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Managed/UnityEngine\" -s=\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/NetStandard/Extensions/2.0.0\" -s=\"/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/NetStandard/ref/2.1.0\" -s=\"/home/diegodias/Downloads/unitystereocamera/Library/ScriptAssemblies\" -s=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator\" -s=\"/home/diegodias/Downloads/unitystereocamera/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Editor\" -rn=\"\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
-        "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/netcorerun/netcorerun",
-        "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
+        "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/netcorerun/netcorerun",
+        "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
         "Library/ScriptAssemblies/Assembly-CSharp.dll",
         "Library/ScriptAssemblies/Unity.TextMeshPro.dll",
         "Library/ScriptAssemblies/Unity.Timeline.dll",
@@ -62,103 +62,103 @@
   ],
   "FileSignatures": [
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.BuildTools.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.BuildTools.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.CSharpSupport.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.CSharpSupport.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Core.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Core.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.DotNet.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.DotNet.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.NativeProgramSupport.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.NativeProgramSupport.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Stevedore.Program.exe"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Stevedore.Program.exe"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.TinyProfiler2.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.TinyProfiler2.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.GNU.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.GNU.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.LLVM.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.LLVM.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.VisualStudio.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.VisualStudio.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.Xcode.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Toolchain.Xcode.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.Tools.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.Tools.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.TundraBackend.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.TundraBackend.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Bee.VisualStudioSolution.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Bee.VisualStudioSolution.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.Data.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.Data.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/BeeBuildProgramCommon.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Newtonsoft.Json.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Newtonsoft.Json.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/NiceIO.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/NiceIO.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.Data.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.Data.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/PlayerBuildProgramLibrary.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.Data.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.Data.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/SharpYaml.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/SharpYaml.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Api.Attributes.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Api.Attributes.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Mdb.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Mdb.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Pdb.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Pdb.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Rocks.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Cecil.Rocks.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Cecil.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Cecil.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Api.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Api.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.BuildLogic.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.BuildLogic.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.IL2CPPExeCompileCppBuildProgram.Data.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.IL2CPP.Bee.IL2CPPExeCompileCppBuildProgram.Data.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Linker.Api.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Linker.Api.dll"
     },
     {
-      "File": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline/Unity.Options.dll"
+      "File": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline/Unity.Options.dll"
     },
     {
       "File": "Library/Bee/2400b0aESkipCompile-inputdata.json"
@@ -210,13 +210,14 @@
   ],
   "GlobSignatures": [
     {
-      "Path": "/home/diego/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/BuildPipeline"
+      "Path": "/home/diegodias/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Tools/BuildPipeline"
     }
   ],
   "ContentDigestExtensions": [
     ".rsp",
     ".dll",
     ".exe",
+    ".csproj",
     ".pdb"
   ],
   "StructuredLogFileName": "Library/Bee/tundra.log.json",
@@ -240,6 +241,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/2400b0aESkipCompile.dag.json",
-  "PayloadsFile": "/home/diego/Documentos/Projetos/unity/dualcam/Library/Bee/2400b0aESkipCompile.dag.payloads",
+  "PayloadsFile": "/home/diegodias/Downloads/unitystereocamera/Library/Bee/2400b0aESkipCompile.dag.payloads",
   "RelativePathToRoot": "../.."
 }

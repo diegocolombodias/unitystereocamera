@@ -44,13 +44,13 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 3584}
+      Script: {instanceID: 3566}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4542}
     - Class: 114
-      Script: {instanceID: 23046}
+      Script: {instanceID: 4682}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -480,6 +480,12 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 85c81368020f4cb25eede7d1365459d0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StereoCameraSetup
+  - hash:
+      serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -898,13 +904,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: f5e8711e0ad49d1ba99d6b40e7a436c8
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: StereoCameraSetup
   platform: 24
   scenePathNames:
   - Assets/Scenes/StereoCameraSetup.unity
-  playerPath: /home/diego/Documentos/Projetos/unity/dualcam/build_linux/build.x86_64
+  playerPath: /home/diegodias/Downloads/bin/cam.x86_64
